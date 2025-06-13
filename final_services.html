@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
+
+  <title>Our Services - TheWeddingClouds</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    header.md\:flex {
+      position: relative;
+      padding-left: 100px;
+      padding-right: 20px;
+    }
+
+    .desktop-logo-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desktop-logo-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .desktop-logo-container h2 {
+      font-size: 24px;
+      color: #121317;
+      font-weight: bold;
+      line-height: tight;
+      letter-spacing: -0.015em;
+    }
+
+    header.md\:flex .flex-1.justify-end.gap-8 {
+      border-right: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+  <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+
+    <header class="md:hidden flex items-center justify-between p-4 border-b border-[#f1f1f4]">
+      <a href="final_home.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="TheWeddingClouds Logo" class="size-6 object-contain rounded-logo">
+        <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em]">
+          TheWeddingClouds
+        </h2>
+      </a>
+      <div class="flex w-12 items-center justify-end">
+        <button id="mobile-menu-button" class="text-[#181111]" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 border-b border-[#f1f1f4]">
+      <div class="flex flex-col gap-4">
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_home.html">Home</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_portfolio.html">Portfolio</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_services.html">Services</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_review.html">Reviews</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_aboutus.html">About Us</a>
+        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-base font-bold leading-normal tracking-[0.015em]"
+          href="final_contact.html">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </div>
+    <header class="hidden md:flex items-center justify-between whitespace-nowrap border-b border-[#f1f1f4] px-10 py-3">
+      <a href="final_home.html" class="desktop-logo-container">
+        <img src="logo.png" alt="TheWeddingClouds Logo">
+        <h2>TheWeddingClouds</h2>
+      </a>
+
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="flex items-center gap-9">
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_home.html">Home</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_portfolio.html">Portfolio</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_services.html">Services</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_review.html">Reviews</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_aboutus.html">About Us</a>
+        </nav>
+        <a href="final_contact.html"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </header>
+    <div class="flex-1 w-full">
+      <div class="layout-content-container flex flex-col max-w-[960px] mx-auto pb-5 px-4 md:px-0">
+        <div class="hidden md:flex flex-wrap justify-between gap-3 p-4">
+          <div class="flex min-w-72 flex-col gap-3">
+            <p class="text-[#121317] tracking-light text-[32px] font-bold leading-tight">Our Services</p>
+            <p class="text-[#686d82] text-sm font-normal leading-normal">
+              Capture your special day with our professional photography and videography services. We offer a range of
+              packages to suit your needs and budget.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Photography
+        </h2>
+        <div class="p-4">
+          <div class="flex flex-col md:flex-row items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-4 flex-1">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#121317] text-base font-bold leading-tight">Photography Packages</p>
+                <p class="text-[#686d82] text-sm font-normal leading-normal">
+                  Choose from our comprehensive photography packages, tailored to capture every precious moment of your
+                  special day.
+                  Our offerings range from 6 to 10 hours of coverage, including one or two photographers, an online
+                  gallery, and hundreds of expertly edited photos.
+                  Premium options also feature engagement sessions and custom photo albums.
+                </p>
+              </div>
+            </div>
+            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 md:flex-[1_1_0px]"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoLYz4l3vlwFq_DizfmCHzHnnOJw733_JtQSPZ9s_crhQLFWgaMY5nPWyVi4ttD4Lo0chpVUX6HJdQtr6d1KXoY3gBjM2VsumB42nlJ9njtJIwgsROOORu1LcafMfxtekayehY4WOmXg8Nqk4B7fETco4huHKR1GCLeBJgZKOt8sUm9rmkeYTK32Y36y7u-KwVZTiykeIMCqm3AuU1xTxkTOISYsJAmqqT5UtxXwHvUZCRIj3SNWekWO2OrCi8n7Vp3g9nKocWevC5");'></div>
+          </div>
+        </div>
+
+        <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Videography
+        </h2>
+        <div class="p-4">
+          <div class="flex flex-col md:flex-row items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-4 flex-1">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#121317] text-base font-bold leading-tight">Videography Packages</p>
+                <p class="text-[#686d82] text-sm font-normal leading-normal">
+                  Relive your cherished moments with our videography services, from concise highlight reels to extensive
+                  documentary edits.
+                  Packages typically include 4 to 8 hours of coverage with one or two videographers, capturing your full
+                  ceremony and speeches, all delivered digitally.
+                </p>
+              </div>
+            </div>
+            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 md:flex-[1_1_0px]"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBG7Z61QK87pV2bgYkchErOdWtUBSnsU6qtFKnm7trO7h7kaiY1U0rKXM0H5ciGxHhCoU41AP7aSApcb2doZs4nSmzejgfmxXwetKfWzvz9fwymovbqH8q6IuzwUMeNHO80xgPZc2pieqw48sJ9w34NV6nkyiFeF0Vh_gl_OU0ONSxLYdYOM6HrZ7ljdK97HUbAN6kdHoXxNrZ2CuE0IbLmxdtHmP3lNm--95zsAR_ZlRYlQlTDf3V77iSODYJM17NZJEQ0VN5UoNvD");'></div>
+          </div>
+        </div>
+
+        <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Add-ons</h2>
+        <div class="p-4">
+          <div class="flex flex-col md:flex-row items-stretch justify-between gap-4 rounded-xl">
+            <div class="flex flex-col gap-4 flex-1">
+              <div class="flex flex-col gap-1">
+                <p class="text-[#121317] text-base font-bold leading-tight">Enhance Your Package</p>
+                <p class="text-[#686d82] text-sm font-normal leading-normal">
+                  Personalize your memories with our range of add-ons, including stunning drone shots for unique aerial
+                  perspectives,
+                  beautifully designed custom photo albums, and additional photographers or videographers to ensure every
+                  angle is covered.
+                </p>
+              </div>
+            </div>
+            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 md:flex-[1_1_0px]"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiOs76iIc8nQDWZaaEwMlSW_pLDiYrN-8eXn38iyeGItuqDOIMrems8QNLvoIeiOyInwnqVfue8tKU42vv8avgqM9-AaLaQAlNP05t-yKY6P1MpDnIwYIMwvPb-fKKToiPkrSEfq3vecnRKcrBd0zm0oSDRrMA-SPY1KmlrwvHKd0iZJiczn66lGjuZLxKRTa-actdAmagM6qYhDaGIOSPS0tLQK8UWutHlW9YTHIomJxLI5KfYTukg7se-i1dP0PSa-DTxt2AB1iH");'></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html> 

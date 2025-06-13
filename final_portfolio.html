@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
+  <title>Featured Weddings - TheWeddingClouds</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .hidden-item {
+      display: none !important;
+    }
+
+    .filter-button {
+      min-width: 100px;
+      justify-content: center;
+      background-color: white;
+      color: #121317;
+      border: 1px solid #e2e2e2;
+    }
+
+    .filter-button.active {
+      background-color: #000000;
+      color: white;
+      border-color: #000000;
+    }
+
+    header.md\:flex {
+      position: relative;
+      padding-left: 100px;
+      padding-right: 20px;
+    }
+
+    .desktop-logo-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desktop-logo-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .desktop-logo-container h2 {
+      font-size: 24px;
+      color: #121317;
+      font-weight: bold;
+      line-height: tight;
+      letter-spacing: -0.015em;
+    }
+
+    header.md\:flex .flex-1.justify-end.gap-8 {
+      border-right: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+  <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+
+    <header class="md:hidden flex items-center justify-between p-4 border-b border-[#f1f1f4]">
+      <a href="final_home.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="TheWeddingClouds Logo" class="size-6 object-contain rounded-logo">
+        <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em]">
+          TheWeddingClouds
+        </h2>
+      </a>
+      <div class="flex w-12 items-center justify-end">
+        <button id="mobile-menu-button" class="text-[#181111]" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 border-b border-[#f1f1f4]">
+      <div class="flex flex-col gap-4">
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_home.html">Home</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_portfolio.html">Portfolio</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_services.html">Services</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_review.html">Reviews</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_aboutus.html">About Us</a>
+        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-base font-bold leading-normal tracking-[0.015em]"
+          href="final_contact.html">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </div>
+    <header class="hidden md:flex items-center justify-between whitespace-nowrap border-b border-[#f1f1f4] px-10 py-3">
+      <a href="final_home.html" class="desktop-logo-container">
+        <img src="logo.png" alt="TheWeddingClouds Logo">
+        <h2>TheWeddingClouds</h2>
+      </a>
+
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="flex items-center gap-9">
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_home.html">Home</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_portfolio.html">Portfolio</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_services.html">Services</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_review.html">Reviews</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_aboutus.html">About Us</a>
+        </nav>
+        <a href="final_contact.html"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </header>
+    <div class="flex-1 w-full">
+      <div class="layout-content-container flex flex-col max-w-[960px] mx-auto pb-5">
+        <div class="hidden md:flex flex-wrap justify-between gap-3 p-4">
+          <h1 class="text-[#121317] tracking-light text-[32px] font-bold leading-tight min-w-72">Featured Weddings</h1>
+        </div>
+
+        <div class="flex gap-3 p-3 overflow-x-auto no-scrollbar md:pr-4">
+          <button class="filter-button flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-4 active"
+            data-filter="all">
+            <p class="text-sm font-medium leading-normal">All</p>
+          </button>
+          <button class="filter-button flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-4"
+            data-filter="wedding">
+            <p class="text-sm font-medium leading-normal">Weddings</p>
+          </button>
+          <button class="filter-button flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-4"
+            data-filter="engagement">
+            <p class="text-sm font-medium leading-normal">Engagements</p>
+          </button>
+          <button class="filter-button flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-4"
+            data-filter="portrait">
+            <p class="text-sm font-medium leading-normal">Portraits</p>
+          </button>
+          <button class="filter-button flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-4"
+            data-filter="event">
+            <p class="text-sm font-medium leading-normal">Events</p>
+          </button>
+        </div>
+
+        <div id="portfolio-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-4">
+          <div class="portfolio-item flex flex-col gap-3 rounded-lg justify-end p-4 aspect-square bg-cover bg-center"
+            style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("2025-05-07.jpg");'
+            data-category="wedding">
+            <p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Sarah & Ben's Elegant Affair</p>
+          </div>
+
+          <div class="portfolio-item flex flex-col gap-3 rounded-lg justify-end p-4 aspect-square bg-cover bg-center"
+            style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("2025-05-08.jpg");'
+            data-category="wedding">
+            <p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Emily & David's Rustic Charm</p>
+          </div>
+
+          <div class="portfolio-item flex flex-col gap-3 rounded-lg justify-end p-4 aspect-square bg-cover bg-center"
+            style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("2025-06-06.jpg");'
+            data-category="event">
+            <p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Sonali and Ankush</p>
+          </div>
+
+          <div class="portfolio-item flex flex-col gap-3 rounded-lg justify-end p-4 aspect-square bg-cover bg-center"
+            style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("2025-05-09.jpg");'
+            data-category="engagement">
+            <p class="text-white text-base font-bold leading-tight w-4/5 line-clamp-2">Olivia & Noah's Urban Celebration</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filter = button.dataset.filter;
+
+          portfolioItems.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+              item.classList.remove('hidden-item');
+            } else {
+              item.classList.add('hidden-item');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

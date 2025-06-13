@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
+
+  <title>Client Stories - TheWeddingClouds</title>
+  <link rel="icon" type="image/x-icon" href="logo.png" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+
+    header.md\:flex {
+      position: relative;
+      padding-left: 100px;
+      padding-right: 20px;
+    }
+
+    .desktop-logo-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desktop-logo-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .desktop-logo-container h2 {
+      font-size: 24px;
+      color: #121317;
+      font-weight: bold;
+      line-height: tight;
+      letter-spacing: -0.015em;
+    }
+
+    header.md\:flex .flex-1.justify-end.gap-8 {
+      border-right: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+  <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
+
+    <header class="md:hidden flex items-center justify-between p-4 border-b border-[#f1f1f4]">
+      <a href="final_home.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="TheWeddingClouds Logo" class="size-6 object-contain rounded-logo">
+        <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em]">
+          TheWeddingClouds
+        </h2>
+      </a>
+      <div class="flex w-12 items-center justify-end">
+        <button id="mobile-menu-button" class="text-[#181111]" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 border-b border-[#f1f1f4]">
+      <div class="flex flex-col gap-4">
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_home.html">Home</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_portfolio.html">Portfolio</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_services.html">Services</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_review.html">Reviews</a>
+        <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_aboutus.html">About Us</a>
+        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-base font-bold leading-normal tracking-[0.015em]"
+          href="final_contact.html">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </div>
+    <header class="hidden md:flex items-center justify-between whitespace-nowrap border-b border-[#f1f1f4] px-10 py-3">
+      <a href="final_home.html" class="desktop-logo-container">
+        <img src="logo.png" alt="TheWeddingClouds Logo">
+        <h2>TheWeddingClouds</h2>
+      </a>
+
+      <div class="flex flex-1 justify-end gap-8">
+        <nav class="flex items-center gap-9">
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_home.html">Home</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_portfolio.html">Portfolio</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_services.html">Services</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_review.html">Reviews</a>
+          <a class="text-[#121317] text-sm font-medium leading-normal" href="final_aboutus.html">About Us</a>
+        </nav>
+        <a href="final_contact.html"
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <span class="truncate">Contact</span>
+        </a>
+      </div>
+    </header>
+    <div class="flex-1 w-full">
+      <div class="layout-content-container flex flex-col max-w-[960px] mx-auto pb-5 px-4 md:px-0">
+        <div class="flex flex-wrap justify-between gap-3 p-4">
+          <p class="text-[#121317] tracking-light text-[32px] font-bold leading-tight min-w-72">Client Stories</p>
+        </div>
+        <div class="flex flex-wrap gap-x-8 gap-y-6 p-4">
+          <div class="flex flex-col gap-2">
+            <p class="text-[#121317] text-4xl font-black leading-tight tracking-[-0.033em]">4.8</p>
+            <div class="flex gap-0.5">
+              <div class="text-[#121317]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-[#121317]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-[#121317]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-[#121317]" data-icon="Star" data-size="18px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="text-[#121317]" data-icon="Star" data-size="18px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-[#121317] text-base font-normal leading-normal">125 reviews</p>
+          </div>
+          <div class="grid min-w-[200px] max-w-[400px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-3">
+            <p class="text-[#121317] text-sm font-normal leading-normal">5</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dcdee4]">
+              <div class="rounded-full bg-[#121317]" style="width: 70%;"></div>
+            </div>
+            <p class="text-[#666c85] text-sm font-normal leading-normal text-right">70%</p>
+            <p class="text-[#121317] text-sm font-normal leading-normal">4</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dcdee4]">
+              <div class="rounded-full bg-[#121317]" style="width: 20%;"></div>
+            </div>
+            <p class="text-[#666c85] text-sm font-normal leading-normal text-right">20%</p>
+            <p class="text-[#121317] text-sm font-normal leading-normal">3</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dcdee4]">
+              <div class="rounded-full bg-[#121317]" style="width: 5%;"></div>
+            </div>
+            <p class="text-[#666c85] text-sm font-normal leading-normal text-right">5%</p>
+            <p class="text-[#121317] text-sm font-normal leading-normal">2</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dcdee4]">
+              <div class="rounded-full bg-[#121317]" style="width: 3%;"></div>
+            </div>
+            <p class="text-[#666c85] text-sm font-normal leading-normal text-right">3%</p>
+            <p class="text-[#121317] text-sm font-normal leading-normal">1</p>
+            <div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#dcdee4]">
+              <div class="rounded-full bg-[#121317]" style="width: 2%;"></div>
+            </div>
+            <p class="text-[#666c85] text-sm font-normal leading-normal text-right">2%</p>
+          </div>
+        </div>
+        <h3 class="text-[#121317] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Sort by</h3>
+        <div class="flex px-4 py-3">
+          <div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-[#f1f1f4] p-1">
+            <label
+              class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#121317] text-[#666c85] text-sm font-medium leading-normal">
+              <span class="truncate">Newest</span>
+              <input type="radio" name="sortOption" class="invisible w-0" value="newest" checked="" />
+            </label>
+            <label
+              class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#121317] text-[#666c85] text-sm font-medium leading-normal">
+              <span class="truncate">Oldest</span>
+              <input type="radio" name="sortOption" class="invisible w-0" value="oldest" />
+            </label>
+            <label
+              class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-[#121317] text-[#666c85] text-sm font-medium leading-normal">
+              <span class="truncate">Top Rated</span>
+              <input type="radio" name="sortOption" class="invisible w-0" value="topRated" />
+            </label>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8 overflow-x-hidden bg-white p-4" id="reviews-container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const clientStories = [{
+      name: "Sophia Carter",
+      date: new Date("2025-04-12"), 
+      rating: 5,
+      review: "TheWeddingClouds exceeded our expectations! Their team was professional, creative, and captured every special moment of our wedding day beautifully. The photos and video are stunning, and we'll cherish them forever.",
+      likes: 15,
+      dislikes: 2,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuBoDXrcHvZOkaALDPhkH_bZLN7fyWPJZjDHgr8fJFWTvjKobU2YGEzb48DrMQpR7S8b74eNeLYGHfbz_-lNffQJznRxlR5P6CplLuKeaE0wN9Zk3WAmCqleCjFh9NaGX2TQs0Vk-gjWtfUtlP87PBsRAS7iIVJolGTdLe-ZR6DNxZk4T3gUIuviXU__c0Wu0tQAO4qzTJWUmwaBGKS5NzeUD9jc0jTZiitQnlqwBwiwwMURhCXHXKT2pCljUhTNWPT3G7IwCocmVY5e",
+    }, {
+      name: "Ethan Bennett",
+      date: new Date("2025-02-12"), 
+      rating: 4,
+      review: "We were very happy with the service provided by TheWeddingClouds. The team was friendly and made us feel comfortable throughout the day. The final product was great, though there were a few minor edits we requested.",
+      likes: 8,
+      dislikes: 1,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuBJCqlQHgsZgmeIqjGD_1VTIArMJxxz9l0h0phr8IA01i2ZYnXk3F17Fv20fx81K9deaLnKRY3jUrVFDD7igPnwUOsLjDcZv-71P-rDgdodgiR4uiQ2sv579paz25C3OJ3PR4cpjvSM9ftxOOFW2y6-lrUB_7N7qz4ndvQPhdbD1nGyiFnUxG_QgaZ-nfTZC7Qh5EkpdvcdKyE2pQxyDOvzrPFIw1f0fHihvWE_UvKx-baBwvnsR2mAvMvqw3cATUKQidLherc5U8T7",
+    }, {
+      name: "Olivia Hayes",
+      date: new Date("2024-12-12"), 
+      rating: 5,
+      review: "From start to finish, TheWeddingClouds was a pleasure to work with. They listened to our vision and delivered beyond our dreams. The quality of their work is exceptional, and we highly recommend them.",
+      likes: 22,
+      dislikes: 3,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDN9Nha2n8k6KYcUafB7rVPjIopm6aiIkeNry6lBYpFACSozu07iLc0_8GShS9Na-a0N7ffpdJNUmNZJFKMHloT7wd1lNu3vmF-QfKdoX9eaXoxT2zru7qGCpWGw5Y5NXTj4iTeF_lXMjkAHmCx6awKO8zYCiGf-3nFnoTjWrcPGPzPrDG6Kxfj9pbAJAPclr4auyTU_0GutSOfMDfVutTYXwV1NFvbgsfpmes_92WL4VMxx6XIsn8F9QfDCr9N6UkAYWlM8qdn-EP",
+    }, {
+      name: "Noah Jackson",
+      date: new Date("2025-05-01"), 
+      rating: 5,
+      review: "Absolutely thrilled with our family photos! TheWeddingClouds perfectly captured the joy and essence of our day. Highly recommend their services for anyone looking for stunning, heartfelt photography.",
+      likes: 10,
+      dislikes: 0,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP1Ue8pVKmf_p4W1obEwu5hrA7KQIiz8z4jI6BYT7AhuEEw8dEcv_ZOnggPM4MkHAzETAmMSSaUl4e6Hs_Bl04p8mOLCQSt9Gt5FMDrCg8kKEEmEAJXvVvRwb3uMFcCSOOqkTs7AO0JFM07yffjT3k_s5Q_SaBsHbyQcCnKNOvq_M8jYGE8UoS7rlSicrxANU1gY5lVas36yd0GtRhfg-vGv3jEVeHRJm9-FqK5nYCdrM_mXmwRT44GQZ6AUJhT_pW0-Y6Wrq_illu0",
+    }, {
+      name: "Ava Rodriguez",
+      date: new Date("2024-10-20"), 
+      rating: 3,
+      review: "The photos were good, but the turnaround time was a bit longer than expected. Overall satisfied, but hoping for quicker delivery next time.",
+      likes: 5,
+      dislikes: 0,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP1Ue8pVKmf_p4W1obEwu5hrA7KQIiz8z4jI6BYT7AhuEEw8dEcv_ZOnggPM4MkHAzETAmMSSaUl4e6Hs_Bl04p8mOLCQSt9Gt5FMDrCg8kKEEmEAJXvVvRwb3uMFcCSOOqkTs7AO0JFM07yffjT3k_s5Q_SaBsHbyQcCnKNOvq_M8jYGE8UoS7rlSicrxANU1gY5lVas36yd0GtRhfg-vGv3jEVeHRJm9-FqK5nYCdrM_mXmwRT44GQZ6AUJhT_pW0-Y6Wrq_illu1",
+    }, {
+      name: "Liam White",
+      date: new Date("2025-01-15"),
+      rating: 4,
+      review: "Professional and friendly team. Our engagement photos turned out beautifully. They really helped us feel at ease during the shoot.",
+      likes: 12,
+      dislikes: 1,
+      profilePic: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP1Ue8pVKmf_p4W1obEwu5hrA7KQIiz8z4jI6BYT7AhuEEw8dEcv_ZOnggPM4MkHAzETAmMSSaUl4e6Hs_Bl04p8mOLCQSt9Gt5FMDrCg8kKEEmEAJXvVvRwb3uMFcCSOOqkTs7AO0JFM07yffjT3k_s5Q_SaBsHbyQcCnKNOvq_M8jYGE8UoS7rlSicrxANU1gY5lVas36yd0GtRhfg-vGv3jEVeHRJm9-FqK5nYCdrM_mXmwRT44GQZ6AUJhT_pW0-Y6Wrq_illu2",
+    }, ];
+
+    const reviewsContainer = document.getElementById("reviews-container");
+    const sortRadios = document.querySelectorAll('input[name="sortOption"]');
+
+    function renderReviews(reviews) {
+      reviewsContainer.innerHTML = ""; 
+      reviews.forEach((story) => {
+        const reviewElement = document.createElement("div");
+        reviewElement.className = "flex flex-col gap-3 bg-white";
+        reviewElement.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                   style='background-image: url("${story.profilePic}");'></div>
+              <div class="flex-1">
+                <p class="text-[#121317] text-base font-medium leading-normal">${story.name}</p>
+                <p class="text-[#666c85] text-sm font-normal leading-normal">${timeAgo(story.date)}</p>
+              </div>
+            </div>
+            <div class="flex gap-0.5">
+              ${generateStarRating(story.rating)}
+            </div>
+            <p class="text-[#121317] text-base font-normal leading-normal">${story.review}</p>
+            <div class="flex gap-9 text-[#666c85]">
+              <button class="flex items-center gap-2">
+                <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">${story.likes}</p>
+              </button>
+              <button class="flex items-center gap-2">
+                <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-inherit">${story.dislikes}</p>
+              </button>
+            </div>
+          `;
+        reviewsContainer.appendChild(reviewElement);
+      });
+    }
+
+    function generateStarRating(rating) {
+      let starsHtml = "";
+      for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+          starsHtml += `
+              <div class="text-[#121317]" data-icon="Star" data-size="20px" data-weight="fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                  ></path>
+                </svg>
+              </div>
+            `;
+        } else {
+          starsHtml += `
+              <div class="text-[#bdc0cc]" data-icon="Star" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+                  ></path>
+                </svg>
+              </div>
+            `;
+        }
+      }
+      return starsHtml;
+    }
+
+    function timeAgo(date) {
+      const now = new Date();
+      const seconds = Math.floor((now - date) / 1000);
+      let interval = seconds / 31536000;
+
+      if (interval > 1) {
+        return Math.floor(interval) + " years ago";
+      }
+      interval = seconds / 2592000;
+      if (interval > 1) {
+        return Math.floor(interval) + " months ago";
+      }
+      interval = seconds / 86400;
+      if (interval > 1) {
+        return Math.floor(interval) + " days ago";
+      }
+      interval = seconds / 3600;
+      if (interval > 1) {
+        return Math.floor(interval) + " hours ago";
+      }
+      interval = seconds / 60;
+      if (interval > 1) {
+        return Math.floor(interval) + " minutes ago";
+      }
+      return Math.floor(seconds) + " seconds ago";
+    }
+
+    // Function to sort reviews
+    function sortReviews(criteria) {
+      let sortedStories = [...clientStories]; 
+
+      if (criteria === "newest") {
+        sortedStories.sort((a, b) => b.date.getTime() - a.date.getTime());
+      } else if (criteria === "oldest") {
+        sortedStories.sort((a, b) => a.date.getTime() - b.date.getTime());
+      } else if (criteria === "topRated") {
+        sortedStories.sort((a, b) => b.rating - a.rating || b.likes - a.likes);
+      }
+      renderReviews(sortedStories);
+    }
+
+    sortRadios.forEach((radio) => {
+      radio.addEventListener("change", (event) => {
+        sortReviews(event.target.value);
+      });
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      sortReviews("newest");
+    });
+  </script>
+</body>
+
+</html>

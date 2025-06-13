@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
+  <title>TheWeddingClouds</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #hero-section {
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+
+    .hero-background-image.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-navigation-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    .hero-navigation-button:hover {
+      opacity: 1;
+    }
+
+    .hero-navigation-button.prev {
+      left: 20px;
+    }
+
+    .hero-navigation-button.next {
+      right: 20px;
+    }
+
+    .hero-navigation-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    @media (min-width: 480px) {
+      .hero-section {
+        padding: 2rem;
+        border-radius: 0.75rem;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-button {
+        height: 3rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* REMOVED min-height: 64px; from here */
+    header.md\:flex {
+      position: relative;
+      padding-left: 100px;
+      padding-right: 20px;
+    }
+
+    .desktop-logo-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .desktop-logo-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .desktop-logo-container h2 {
+      font-size: 24px;
+      color: #121317;
+      font-weight: bold;
+      line-height: tight;
+      letter-spacing: -0.015em;
+    }
+
+    /* This rule from portfolio.html's CSS was also added to home.html for consistency */
+    header.md\:flex .flex-1.justify-end.gap-8 {
+      border-right: none;
+    }
+
+    #footer-copyright-section p {
+      color: #333;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+
+    .featured-weddings-container {
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      justify-content: flex-start;
+    }
+
+    .featured-wedding-item {
+      flex: 1 1 auto;
+      min-width: 280px;
+      max-width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      .featured-weddings-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 16px;
+      }
+
+      .featured-wedding-item {
+        display: inline-block;
+        margin-right: 16px;
+        vertical-align: top;
+      }
+
+      .featured-weddings-container .featured-wedding-item:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .featured-weddings-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        overflow-x: hidden;
+        white-space: normal;
+      }
+      .featured-wedding-item {
+        min-width: auto;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+  <header class="md:hidden flex items-center justify-between p-4 border-b border-[#f1f1f4]">
+    <a href="final_home.html" class="flex items-center gap-2">
+      <img src="logo.png" alt="TheWeddingClouds Logo" class="size-6 object-contain rounded-logo">
+      <h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em]">
+        TheWeddingClouds
+      </h2>
+    </a>
+    <div class="flex w-12 items-center justify-end">
+      <button id="mobile-menu-button" class="text-[#181111]" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+          </path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 border-b border-[#f1f1f4]">
+    <div class="flex flex-col gap-4">
+      <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_home.html">Home</a>
+      <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_portfolio.html">Portfolio</a>
+      <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_services.html">Services</a>
+      <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_review.html">Reviews</a>
+      <a class="text-[#121317] text-base font-medium leading-normal py-2" href="final_aboutus.html">About Us</a>
+      <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-base font-bold leading-normal tracking-[0.015em]"
+        href="final_contact.html">
+        <span class="truncate">Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="hidden md:flex items-center justify-between whitespace-nowrap border-b border-[#f1f1f4] px-10 py-3">
+    <a href="final_home.html" class="desktop-logo-container">
+      <img src="logo.png" alt="TheWeddingClouds Logo">
+      <h2>TheWeddingClouds</h2>
+    </a>
+
+    <div class="flex flex-1 justify-end gap-8">
+      <nav class="flex items-center gap-9">
+        <a class="text-[#121317] text-sm font-medium leading-normal" href="final_home.html">Home</a>
+        <a class="text-[#121317] text-sm font-medium leading-normal" href="final_portfolio.html">Portfolio</a>
+        <a class="text-[#121317] text-sm font-medium leading-normal" href="final_services.html">Services</a>
+        <a class="text-[#121317] text-sm font-medium leading-normal" href="final_review.html">Reviews</a>
+        <a class="text-[#121317] text-sm font-medium leading-normal" href="final_aboutus.html">About Us</a>
+      </nav>
+      <a href="final_contact.html"
+        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+        <span class="truncate">Contact</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="px-4 md:px-40 flex justify-center py-5">
+      <div class="max-w-[960px] w-full">
+        <div id="hero-section"
+          class="hero-section flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 sm:gap-8 sm:rounded-xl">
+          <div class="hero-background-image active"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('DSC08988.jpg');">
+          </div>
+          <div class="hero-background-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('DSC03016.jpg');">
+          </div>
+          <div class="hero-background-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('DSC02657.jpg');">
+          </div>
+          <div class="hero-background-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('DSC05184.jpg');">
+          </div>
+          <div class="hero-background-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('DSC05491.jpg');">
+          </div>
+
+          <div class="flex flex-col gap-2 text-center relative z-10">
+            <h1 class="hero-title text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+              Capturing Your Love Story
+            </h1>
+            <h2 class="hero-subtitle text-white text-sm font-normal leading-normal">
+              Preserving the magic of your special day with timeless photography and cinematic videography.
+            </h2>
+          </div>
+          <a href="final_portfolio.html"><button
+              class="hero-button flex items-center justify-center rounded-xl h-10 px-4 bg-[#000000] text-white text-sm font-bold tracking-[0.015em] relative z-10">
+              <span class="truncate">View Our Portfolio</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 md:px-40 flex justify-center">
+      <div class="max-w-[960px] w-full">
+        <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">
+          Featured Weddings
+        </h2>
+
+        <div class="flex featured-weddings-container pb-4 md:grid md:grid-cols-4 md:gap-6 md:pb-0 gap-4 px-4 md:px-0">
+          <div class="flex flex-col gap-3 featured-wedding-item">
+            <div class="w-full aspect-video bg-cover rounded-xl"
+              style='background-image: url("2025-06-06.jpg");'>
+            </div>
+            <div>
+              <p class="text-[#121317] text-base font-medium leading-normal">Sonali and Ankura</p>
+              <p class="text-[#686d82] text-sm font-normal leading-normal"> </p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 featured-wedding-item">
+            <div class="w-full aspect-video bg-cover rounded-xl"
+              style='background-image: url("2025-05-07.jpg");'>
+            </div>
+            <div>
+              <p class="text-[#121317] text-base font-medium leading-normal">Olivia & Ethan's Coastal Romance</p>
+              <p class="text-[#686d82] text-sm font-normal leading-normal">    </p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 featured-wedding-item">
+            <div class="w-full aspect-video bg-cover rounded-xl"
+              style='background-image: url("2025-05-08.jpg");'>
+            </div>
+            <div>
+              <p class="text-[#121317] text-base font-medium leading-normal"></p>
+              <p class="text-[#686d82] text-sm font-normal leading-normal">  </p>
+            </div>
+          </div>
+          <div class="hidden md:flex flex-col gap-3 featured-wedding-item">
+            <div class="w-full aspect-video bg-cover rounded-xl"
+              style='background-image: url("2025-05-09.jpg");'>
+            </div>
+            <div>
+              <p class="text-[#121317] text-base font-medium leading-normal">Deepa and Keeran</p>
+              <p class="text-[#686d82] text-sm font-normal leading-normal"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 md:px-40 flex justify-center">
+      <div class="max-w-[960px] w-full">
+        <h2 class="text-[#121317] text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">
+          Our Services
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+          <div class="flex gap-3 rounded-lg border border-[#dddee4] bg-white p-4 flex-col">
+            <div class="text-[#121317]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                viewBox="0 0 256 256">
+                <path
+                  d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z">
+                </path>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h2 class="text-[#121317] text-base font-bold leading-tight">Photography</h2>
+              <p class="text-[#686d82] text-sm font-normal leading-normal">Capturing every moment with artistry and
+                precision.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 rounded-lg border border-[#dddee4] bg-white p-4 flex-col">
+            <div class="text-[#121317]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                viewBox="0 0 256 256">
+                <path
+                  d="M216,104H102.09L210,75.51a8,8,0,0,0,5.68-9.84l-8.16-30a15.93,15.93,0,0,0-19.42-11.13L35.81,64.74a15.75,15.75,0,0,0-9.7,7.4,15.51,15.51,0,0,0-1.55,12L32,111.56c0,.14,0,.29,0,.44v88a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V112A8,8,0,0,0,216,104ZM192.16,40l6,22.07-22.62,6L147.42,51.83Zm-66.69,17.6,28.12,16.24-36.94,9.75L88.53,67.37Zm-79.4,44.62-6-22.08,26.5-7L94.69,89.4ZM208,200H48V120H208v80Z">
+                </path>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h2 class="text-[#121317] text-base font-bold leading-tight">Videography</h2>
+              <p class="text-[#686d82] text-sm font-normal leading-normal">Creating cinematic wedding films that tell
+                your story.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 rounded-lg border border-[#dddee4] bg-white p-4 flex-col">
+            <div class="text-[#121317]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                viewBox="0 0 256 256">
+                <path
+                  d="M251.77,73a8,8,0,0,0-8.21.39L208,97.05V72a16,16,0,0,0-16-16H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V159l35.56,23.71A8,8,0,0,0,248,184a8,8,0,0,0,8-8V80A8,8,0,0,0,251.77,73ZM192,184H32V72H192V184Zm48-22.95-32-21.33V116.28L240,95Z">
+                </path>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-1">
+              <h2 class="text-[#121317] text-base font-bold leading-tight">Photo Booth</h2>
+              <p class="text-[#686d82] text-sm font-normal leading-normal">Adding fun and memories with our interactive
+                photo booth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="flex justify-center">
+    <div class="max-w-[960px] w-full">
+      <div class="flex flex-col gap-6 px-5 py-10 text-center">
+        <div class="flex flex-wrap items-center justify-center gap-6 md:flex-row md:justify-around">
+          <a class="text-[#686d82] text-base font-normal leading-normal min-w-40"
+            href="final_portfolio.html">Portfolio</a>
+          <a class="text-[#686d82] text-base font-normal leading-normal min-w-40"
+            href="final_services.html">Services</a>
+          <a class="text-[#686d82] text-base font-normal leading-normal min-w-40" href="final_review.html">Reviews</a>
+          <a class="text-[#686d82] text-base font-normal leading-normal min-w-40" href="final_aboutus.html">About
+            Us</a>
+          <a class="flex items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#202124] text-white text-base font-bold leading-normal tracking-[0.015em] min-w-40 md:hidden"
+            href="final_contact.html">
+            <span class="truncate">Contact</span>
+          </a>
+          <a class="text-[#686d82] text-base font-normal leading-normal min-w-40 hidden md:inline-block"
+            href="final_contact.html">Contact</a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://www.instagram.com/theweddingclouds1/" target="_blank" rel="noopener noreferrer">
+            <div class="text-[#686d82]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://www.facebook.com/profile.php?id=61571745624635" target="_blank" rel="noopener noreferrer">
+            <div class="text-[#686d82]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook"
+                viewBox="0 0 16 16">
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@keeranstudio" target="_blank" rel="noopener noreferrer">
+            <div class="text-[#686d82]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="https://wa.me/9809230861" target="_blank" rel="noopener noreferrer">
+            <div class="text-[#686d82]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex justify-center items-center gap-2 mt-4">
+          <p class="text-[#686d82] text-base font-normal leading-normal">©2025 TheWeddingClouds. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      const heroSection = document.getElementById('hero-section');
+      const backgroundImages = heroSection.querySelectorAll('.hero-background-image');
+
+      const prevButton = heroSection.querySelector('.hero-navigation-button.prev');
+      const nextButton = heroSection.querySelector('.hero-navigation-button.next');
+
+      let currentIndex = 0;
+      let intervalId;
+
+      function showImage(index) {
+        backgroundImages.forEach(img => img.classList.remove('active'));
+        if (backgroundImages[index]) {
+          backgroundImages[index].classList.add('active');
+        }
+      }
+
+      function showNextImage() {
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+        showImage(currentIndex);
+      }
+
+      function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(showNextImage, 4000);
+      }
+
+      if (backgroundImages.length > 0) {
+        showImage(currentIndex);
+        resetInterval();
+      }
+    });
+  </script>
+</body>
+
+</html>
